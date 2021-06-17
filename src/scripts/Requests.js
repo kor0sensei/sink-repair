@@ -1,4 +1,4 @@
-import { getRequests } from "./dataAccess.js"
+import { getRequests, deleteRequest } from "./dataAccess.js"
 
 export const Requests = () => {
     const requests = getRequests() // grab the local state of the requests data
@@ -8,8 +8,8 @@ export const Requests = () => {
             ${
                 requests.map(
                       (request) => `<li class="choice-list-item request--list-item">
-                        <input type="radio" value="${request.id}" name="request"> ${request.description}
-                        <div class="price">Price: $${request.price}</div>
+                        <input type="hidden" value="${request.id}" name="request"> ${request.description}
+                        <button class="request__delete" id="request--${request.id}">Delete</button>
                       </li>`).join("")
             }
         </ul>
@@ -17,3 +17,12 @@ export const Requests = () => {
 
     return html
 }
+
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", click => {
+    if (click.target.id.startsWith("request--")) {
+        const [,requestId] = click.target.id.split("--")
+        deleteRequest(parseInt(requestId))
+    }
+})
