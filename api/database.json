@@ -1,13 +1,49 @@
 {
-    "plumbers": [],
-    "completions": [],
-    "requests": [
-        {
-            "id": 1,
-            "description": "Aut sint voluptatem fugit eius quas molestiae modi.",
-            "address": "34445 Bianka Ports",
-            "budget": 400,
-            "neededBy": "2021-08-27"
-        }
-    ]
+  "plumbers": [
+    {
+      "id": 1,
+      "name": "Maude"
+    },
+    {
+      "id": 2,
+      "name": "Merle"
+    }
+  ],
+  "requests": [
+    {
+      "id": 1,
+      "description": "Need kitchen sink pipe replaced and system flush",
+      "address": "34445 Bianka Ports",
+      "budget": 400,
+      "neededBy": "2021-08-27"
+    },
+    {
+      "id": 2,
+      "description": "Need kids bathroom sink full pipe replacement and same for master bathroom",
+      "address": "42069 Strawberry Heights",
+      "budget": 850,
+      "neededBy": "2021-09-03"
+    },
+    {
+      "description": "Leaky faucet in master bathroom",
+      "address": "5454 Strawberry Avenue",
+      "budget": "725",
+      "neededBy": "2021-08-11",
+      "id": 3
+    },
+    {
+      "description": "Leaky outside faucet on right side of house",
+      "address": "3671 Whispymound Drive",
+      "budget": "420",
+      "neededBy": "2021-08-21",
+      "id": 4
+    }
+  ],
+  "completions": [
+    {
+      "id": 1,
+      "requestId": 1,
+      "plumberId": 1
+    }
+  ]
 }
